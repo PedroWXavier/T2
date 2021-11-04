@@ -65,7 +65,8 @@ int main(int argc, char** argv)
         //Aqui pede trabalho para o mestre e entrega o vetor pronto
         //                                        v- Utiliza tag como o identificador do vetor enviado
         MPI_Recv(vetRecv, MAX, MPI_INT, my_rank, tag, MPI_COMM_WORLD, &status);
-        *vetRetorno = *vetRecv;
+        memcpy ( &vetRetorno, &vetRecv, MAX );
+        //*vetRetorno = *vetRecv;
         qsort(vetRetorno, MAX, sizeof(int), compare);
         MPI_Send(vetRetorno, MAX, MPI_INT, 0, tag, MPI_COMM_WORLD);
     }
