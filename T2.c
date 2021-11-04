@@ -53,9 +53,7 @@ int main(int argc, char** argv)
         
 
     //Inicia o timer
-    //clock_t begin = clock();
-    double t1,t2;
-    t1 = MPI_Wtime();  // inicia a contagem do tempo
+    clock_t begin = clock();
     
     MPI_Init(&argc, & argv);
 
@@ -85,13 +83,10 @@ int main(int argc, char** argv)
     }
 
     //Para o timer
-    //clock_t end = clock();
+    clock_t end = clock();
     
-    //runtime = (double)(end - begin) / CLOCKS_PER_SEC;
-    //printf("Tempo de execução: %f segundos.", runtime);
-
-    t2 = MPI_Wtime(); // termina a contagem do tempo
-    printf("\nTempo de execucao: %f\n\n", t2-t1);
+    runtime = (double)(end - begin) / CLOCKS_PER_SEC;
+    printf("Tempo de execução: %f segundos.", runtime);
     
     return 0;
 
