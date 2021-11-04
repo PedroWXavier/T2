@@ -20,11 +20,11 @@ int main((int argc, char** argv)
     int th_id, nthreads;
     int proxVetor = 0; //Indica o próximo vetor do saco de trabalho a ser enviado para escravos
     int sacoTrabalho[MAX][MAX];
-    bool vetProntos[MAX];
+    Boolean vetProntos[MAX];
     int vetRecv[MAX]; //vetor de trabalho para escravo
     int vetRetorno[MAX]; //vetor de retorno ordenado
     int my_rank; //Identificador do processo
-    int proc_n = ; //Número de processos
+    int proc_n = 1; //Número de processos
     int tag; /* Tag para as mensagens */
     int source; /* Iterador de processos */
     MPI_Status status; /* Status de retorno */
@@ -62,7 +62,7 @@ int main((int argc, char** argv)
         //Aqui pede trabalho para o mestre e entrega o vetor pronto
         //                                        v- Utiliza tag como o identificador do vetor enviado
         MPI_Recv(vetRecv, MAX, MPI_INT, my_rank, tag, MPI_COMM_WORLD, &status);
-        vetRetorno = vetRecv;
+        *vetRetorno = *vetRecv;
         qsort(vetRetorno, MAX, sizeof(int), compare);
         MPI_Send(vetRetorno, MAX, MPI_INT, 0, tag, MPI_COMM_WORLD);
     }
