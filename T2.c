@@ -16,6 +16,7 @@ int compare (const void * a, const void * b)
  
 int main(int argc, char** argv)
 {
+    printf("Aqui deu bom");
 
     //É gerada uma matriz de MAX*MAX inteiros e um vetor de MAX booleans para saber quais colunas já foram processadas
     //O saco de trabalho é iniciado com valores aleatórios de 0 à MAX*MAX e o vetor de porntos é inicializado com "false" em todas as posições
@@ -53,7 +54,7 @@ int main(int argc, char** argv)
     //printf("\nEnter the number of threads: ");
     //scanf("%d",&nthreads);
         
-    printf("Aqui deu bom");
+    printf("Aqui deu bom  tbm");
     //Inicia o timer
     t1 = MPI_Wtime();  // inicia a contagem do tempo
     
