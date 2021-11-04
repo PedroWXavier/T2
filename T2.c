@@ -5,7 +5,7 @@
 #include "mpi.h"
 
 #define INFINITY 9999
-#define MAX 10
+#define MAX 500
 
 //Função necessária para usar qsort, define comparação de inteiros
 int compare (const void * a, const void * b)
@@ -34,11 +34,10 @@ int main(int argc, char** argv)
     int source; /* Iterador de processos */
     MPI_Status status; /* Status de retorno */
 
-
-    MPI_Init(&argc, & argv);
-
     printf("Entre o número de processos: ");
     scanf("%d", &proc_n);
+
+    MPI_Init(&argc, & argv);
 
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
     MPI_Comm_size(MPI_COMM_WORLD, &proc_n);
