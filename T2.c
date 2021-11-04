@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "mpi.h"
 
 #define INFINITY 9999
@@ -20,7 +21,7 @@ int main(int argc, char** argv)
     int th_id, nthreads;
     int proxVetor = 0; //Indica o próximo vetor do saco de trabalho a ser enviado para escravos
     int sacoTrabalho[MAX][MAX];
-    Boolean vetProntos[MAX];
+    bool vetProntos[MAX];
     int vetRecv[MAX]; //vetor de trabalho para escravo
     int vetRetorno[MAX]; //vetor de retorno ordenado
     int my_rank; //Identificador do processo
