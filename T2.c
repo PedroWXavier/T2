@@ -33,7 +33,6 @@ int main(int argc, char** argv)
     int tag; /* Tag para as mensagens */
     int source; /* Iterador de processos */
     MPI_Status status; /* Status de retorno */
-    double t1,t2;
 
     //printf("Entre o número de processos: ");
     //scanf("%d", &proc_n);
@@ -55,6 +54,7 @@ int main(int argc, char** argv)
 
     //Inicia o timer
     //clock_t begin = clock();
+    double t1,t2;
     t1 = MPI_Wtime();  // inicia a contagem do tempo
     
     MPI_Init(&argc, & argv);
