@@ -53,7 +53,7 @@ int main(int argc, char** argv)
     //printf("\nEnter the number of threads: ");
     //scanf("%d",&nthreads);
         
-
+    printf("Aqui deu bom");
     //Inicia o timer
     t1 = MPI_Wtime();  // inicia a contagem do tempo
     
