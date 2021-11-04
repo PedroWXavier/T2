@@ -7,7 +7,11 @@
 #define INFINITY 9999
 #define MAX 500
 
-
+//Função necessária para usar qsort, define comparação de inteiros
+int compare (const void * a, const void * b)
+{
+  return ( *(int*)a - *(int*)b );
+}
  
 int main(int argc, char** argv)
 {
@@ -90,11 +94,5 @@ int main(int argc, char** argv)
     return 0;
 
     MPI_Finalize();
-}
-
-//Função necessária para usar qsort, define comparação de inteiros
-int compare (const void * a, const void * b)
-{
-  return ( *(int*)a - *(int*)b );
 }
  
