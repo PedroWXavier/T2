@@ -5,7 +5,7 @@
 #include "mpi.h"
 
 #define INFINITY 9999
-#define MAX 500
+#define MAX 10
 
 //Função necessária para usar qsort, define comparação de inteiros
 int compare (const void * a, const void * b)
