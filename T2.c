@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include "mpi.h"
 
 #define INFINITY 9999
