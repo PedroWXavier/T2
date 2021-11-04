@@ -8,7 +8,7 @@
 
 
  
-int main((int argc, char** argv)
+int main(int argc, char** argv)
 {
 
     //É gerada uma matriz de MAX*MAX inteiros e um vetor de MAX booleans para saber quais colunas já foram processadas
