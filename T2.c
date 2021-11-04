@@ -37,12 +37,6 @@ int main(int argc, char** argv)
     //printf("Entre o número de processos: ");
     //scanf("%d", &proc_n);
 
-    MPI_Init(&argc, & argv);
-
-    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
-    MPI_Comm_size(MPI_COMM_WORLD, &proc_n);
-
-
     //Inicializa o saco de trabalho com valores aleatórios
     srand(time(NULL));
 
@@ -61,7 +55,11 @@ int main(int argc, char** argv)
     //Inicia o timer
     clock_t begin = clock();
     
-    
+    MPI_Init();
+
+    MPI_Comm_rank(&my_rank);
+    MPI_Comm_size(&proc_n);
+
     if (my_rank != 0){ //Se é escravo
         //Aqui pede trabalho para o mestre e entrega o vetor pronto
         //                                        v- Utiliza tag como o identificador do vetor enviado
