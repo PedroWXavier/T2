@@ -34,8 +34,8 @@ int main(int argc, char** argv)
     int source; /* Iterador de processos */
     MPI_Status status; /* Status de retorno */
 
-    printf("Entre o número de processos: ");
-    scanf("%d", &proc_n);
+    //printf("Entre o número de processos: ");
+    //scanf("%d", &proc_n);
 
     MPI_Init(&argc, & argv);
 
