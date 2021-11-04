@@ -81,7 +81,7 @@ int main(int argc, char** argv)
         //E recebe os prontos
         for (source = 1; source < proc_n; source++){
             MPI_Recv(vetRetorno, MAX, MPI_INT, my_rank, tag, MPI_COMM_WORLD, &status);
-            sacoTrabalho[tag] = vetRetorno;
+            //sacoTrabalho[tag] = vetRetorno;
         }
     }
 
