@@ -5,7 +5,7 @@
 #include "mpi.h"
 
 #define INFINITY 9999
-#define MAX 500
+#define MAX 2000
 
 //Função necessária para usar qsort, define comparação de inteiros
 int compare (const void * a, const void * b)
@@ -33,6 +33,7 @@ int main(int argc, char** argv)
     int tag; /* Tag para as mensagens */
     int source; /* Iterador de processos */
     MPI_Status status; /* Status de retorno */
+    double t1,t2;
 
     //printf("Entre o número de processos: ");
     //scanf("%d", &proc_n);
@@ -53,7 +54,7 @@ int main(int argc, char** argv)
         
 
     //Inicia o timer
-    clock_t begin = clock();
+    t1 = MPI_Wtime();  // inicia a contagem do tempo
     
     MPI_Init(&argc, & argv);
 
@@ -83,13 +84,11 @@ int main(int argc, char** argv)
     }
 
     //Para o timer
-    clock_t end = clock();
+    t2 = MPI_Wtime(); // termina a contagem do tempo
+    printf("\nTempo de execucao: %f\n\n", t2-t1);
     
-    runtime = (double)(end - begin) / CLOCKS_PER_SEC;
-    printf("Tempo de execução: %f segundos.", runtime);
-    
-    return 0;
-
     MPI_Finalize();
+
+    return 0;
 }
  
